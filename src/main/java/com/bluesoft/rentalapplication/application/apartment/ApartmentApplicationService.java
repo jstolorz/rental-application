@@ -2,10 +2,17 @@ package com.bluesoft.rentalapplication.application.apartment;
 
 import com.bluesoft.rentalapplication.domain.apartment.Apartment;
 import com.bluesoft.rentalapplication.domain.apartment.ApartmentFactory;
+import com.bluesoft.rentalapplication.domain.apartment.ApartmentRepository;
 
 import java.util.Map;
 
 public class ApartmentApplicationService {
+
+    private final ApartmentRepository apartmentRepository;
+
+    public ApartmentApplicationService(final ApartmentRepository apartmentRepository) {
+        this.apartmentRepository = apartmentRepository;
+    }
 
     public void add(String ownerId,
                     String street,
@@ -18,6 +25,9 @@ public class ApartmentApplicationService {
                     Map<String,Double> roomsDefinition){
 
         final Apartment apartment = new ApartmentFactory().create(ownerId, street, postalCode, houseNumber, apartmentNumber, city, country, description, roomsDefinition);
+
+        apartmentRepository.save(apartment);
+
     }
 
 }
