@@ -24,6 +24,6 @@ public class ApartmentFactory {
             rooms.add(new Room(name, squerMeter));
         });
 
-        return new Apartment(ownerId, address, description);
+        return new Apartment(ownerId, address, rooms,description);
     }
 }
