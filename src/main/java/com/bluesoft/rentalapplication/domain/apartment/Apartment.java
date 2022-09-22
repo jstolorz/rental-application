@@ -3,6 +3,8 @@ package com.bluesoft.rentalapplication.domain.apartment;
 import java.util.List;
 
 public class Apartment {
+
+    private String id;
     private final String ownerId;
     private final Address address;
     private List<Room> rooms;
