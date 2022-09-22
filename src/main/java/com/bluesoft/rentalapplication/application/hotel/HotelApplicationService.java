@@ -1,7 +1,7 @@
 package com.bluesoft.rentalapplication.application.hotel;
 
-import com.bluesoft.rentalapplication.domain.hotel.Address;
 import com.bluesoft.rentalapplication.domain.hotel.Hotel;
+import com.bluesoft.rentalapplication.domain.hotel.HotelFactory;
 
 public class HotelApplicationService {
 
@@ -12,9 +12,7 @@ public class HotelApplicationService {
                     String city,
                     String country){
 
-        Address address = new Address(street, postalCode, buildingNumber, city, country);
-
-        new Hotel(name, address);
+        final Hotel hotel = new HotelFactory().create(name, street, postalCode, buildingNumber, city, country);
 
     }
 
