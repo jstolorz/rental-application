@@ -2,11 +2,11 @@ package com.bluesoft.rentalapplication.domain.apartment;
 
 class Room {
     private final String name;
-    private final SquerMeter squerMeter;
+    private final SquareMeter squareMeter;
 
-    Room(final String name, final SquerMeter squerMeter) {
+    Room(final String name, final SquareMeter squerMeter) {
 
         this.name = name;
-        this.squerMeter = squerMeter;
+        this.squareMeter = squerMeter;
     }
 }

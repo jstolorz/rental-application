@@ -1,9 +1,9 @@
 package com.bluesoft.rentalapplication.domain.apartment;
 
-class SquerMeter {
+class SquareMeter {
     private Double size;
 
-    SquerMeter(final Double size) {
+    SquareMeter(final Double size) {
         this.size = size;
     }
 }

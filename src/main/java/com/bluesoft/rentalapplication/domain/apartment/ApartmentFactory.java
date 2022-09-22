@@ -20,7 +20,7 @@ public class ApartmentFactory {
         List<Room> rooms = new ArrayList<>();
 
         roomsDefinition.forEach((name, size) -> {
-            SquerMeter squerMeter = new SquerMeter(size);
+            SquareMeter squerMeter = new SquareMeter(size);
             rooms.add(new Room(name, squerMeter));
         });
 
