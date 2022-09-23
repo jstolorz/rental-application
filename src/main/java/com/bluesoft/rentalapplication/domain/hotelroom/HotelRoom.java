@@ -11,7 +11,7 @@ public class HotelRoom {
 
     @Id
     @GeneratedValue
-    private final String hotelId;
+    private String hotelId;
     private final int number;
 
     @OneToMany

@@ -1,5 +1,8 @@
 package com.bluesoft.rentalapplication.domain.hotelroom;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 class SquareMeter {
     private Double value;
 
