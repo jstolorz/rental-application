@@ -1,5 +1,8 @@
 package com.bluesoft.rentalapplication.domain.hotelroom;
 
+import javax.persistence.Embeddable;
+
+
 class Space {
     private final String name;
     private final SquareMeter squareMeter;
