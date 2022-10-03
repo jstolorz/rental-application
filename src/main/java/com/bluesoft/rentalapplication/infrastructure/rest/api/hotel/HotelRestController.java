@@ -25,8 +25,5 @@ public class HotelRestController {
        );
     }
 
-    @PutMapping("/book/{id}")
-    public void book(@PathVariable String id,@RequestBody HotelBookingDto hotelBookingDto){
-       hotelApplicationService.book(id, hotelBookingDto.getTenantId(), hotelBookingDto.getDays());
-    }
+
 }

@@ -28,7 +28,5 @@ public class HotelApplicationService {
 
     }
 
-    public void book(final String id, final String tenantId, final List<LocalDate> days) {
 
-    }
 }
