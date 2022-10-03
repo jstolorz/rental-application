@@ -1,5 +1,7 @@
 package com.bluesoft.rentalapplication.domain.apartment;
 
+import com.bluesoft.rentalapplication.domain.eventchannel.EventChannel;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -26,7 +28,9 @@ public class Apartment {
         this.description = description;
     }
 
-    public void book(final String tenantId, final Period period) {
+    public void book(final String tenantId, final Period period, final EventChannel eventChannel) {
         final ApartmentBooked apartmentBooked = ApartmentBooked.create(id, ownerId, tenantId, period);
+        eventChannel.publish(apartmentBooked);
+
     }
 }
