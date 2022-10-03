@@ -27,6 +27,6 @@ public class Apartment {
     }
 
     public void book(final String tenantId, final Period period) {
-
+        final ApartmentBooked apartmentBooked = ApartmentBooked.create(id, ownerId, tenantId, period);
     }
 }
