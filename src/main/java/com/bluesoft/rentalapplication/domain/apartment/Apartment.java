@@ -25,4 +25,8 @@ public class Apartment {
         this.rooms = rooms;
         this.description = description;
     }
+
+    public void book(final String tenantId, final Period period) {
+
+    }
 }
