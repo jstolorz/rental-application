@@ -4,6 +4,9 @@ import com.bluesoft.rentalapplication.domain.hotel.Hotel;
 import com.bluesoft.rentalapplication.domain.hotel.HotelFactory;
 import com.bluesoft.rentalapplication.domain.hotel.HotelRepository;
 
+import java.time.LocalDate;
+import java.util.List;
+
 public class HotelApplicationService {
 
     private final HotelRepository hotelRepository;
@@ -25,4 +28,7 @@ public class HotelApplicationService {
 
     }
 
+    public void book(final String id, final String tenantId, final List<LocalDate> days) {
+
+    }
 }
