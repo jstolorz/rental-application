@@ -1,7 +1,10 @@
 package com.bluesoft.rentalapplication.domain.apartmentbookinghistory;
 
+import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
 import java.time.LocalDate;
 
+@Embeddable
 public class BookingPeriod {
     private final LocalDate periodStart;
     private final LocalDate periodEnd;
