@@ -1,12 +1,10 @@
 package com.bluesoft.rentalapplication.domain.apartmentbookinghistory;
 
-import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import java.time.LocalDateTime;
 @Entity
 public class ApartmentBooking {
-
 
     private final BookingStep start;
     private LocalDateTime bookingDateTime;
