@@ -29,7 +29,7 @@ public class HotelBookingHistoryEventListener {
     }
 
     private HotelBookingHistory getHotelBookingHistory(String hotelId){
-        if(hotelBookingHistoryRepository.existdFor(hotelId)){
+        if(hotelBookingHistoryRepository.existsFor(hotelId)){
            return hotelBookingHistoryRepository.findFor(hotelId);
         }else{
             return new HotelBookingHistory(hotelId);
