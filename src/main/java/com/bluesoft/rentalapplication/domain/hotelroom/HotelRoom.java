@@ -1,5 +1,6 @@
 package com.bluesoft.rentalapplication.domain.hotelroom;
 
+import com.bluesoft.rentalapplication.domain.apartment.Booking;
 import com.bluesoft.rentalapplication.domain.eventchannel.EventChannel;
 
 import javax.persistence.Entity;
@@ -31,8 +32,9 @@ public class HotelRoom {
         this.description = description;
     }
 
-    public void book(final String tenantId, final List<LocalDate> days, final EventChannel eventChannel) {
+    public Booking book(final String tenantId, final List<LocalDate> days, final EventChannel eventChannel) {
        HotelRoomBooked hotelRoomBooked = HotelRoomBooked.create(hotelRoomId,hotelId, tenantId, days);
        eventChannel.publish(hotelRoomBooked);
+        return Booking.hotelRoom(hotelRoomId,tenantId,days);
     }
 }
