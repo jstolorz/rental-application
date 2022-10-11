@@ -1,9 +1,6 @@
 package com.bluesoft.rentalapplication.application.apartment;
 
-import com.bluesoft.rentalapplication.domain.apartment.Apartment;
-import com.bluesoft.rentalapplication.domain.apartment.ApartmentFactory;
-import com.bluesoft.rentalapplication.domain.apartment.ApartmentRepository;
-import com.bluesoft.rentalapplication.domain.apartment.Period;
+import com.bluesoft.rentalapplication.domain.apartment.*;
 import com.bluesoft.rentalapplication.domain.eventchannel.EventChannel;
 
 import java.time.LocalDate;
@@ -12,10 +9,13 @@ import java.util.Map;
 public class ApartmentApplicationService {
 
     private final ApartmentRepository apartmentRepository;
+    private final BookingRepository bookingRepository;
+
     private final EventChannel eventChannel;
 
-    public ApartmentApplicationService(final ApartmentRepository apartmentRepository, final EventChannel eventChannel) {
+    public ApartmentApplicationService(final ApartmentRepository apartmentRepository, final BookingRepository bookingRepository, final EventChannel eventChannel) {
         this.apartmentRepository = apartmentRepository;
+        this.bookingRepository = bookingRepository;
         this.eventChannel = eventChannel;
     }
 
@@ -39,6 +39,8 @@ public class ApartmentApplicationService {
         Apartment apartment = apartmentRepository.findById(id);
         Period period = new Period(start,end);
 
-        apartment.book(tenantId,period, eventChannel);
+        Booking booking = apartment.book(tenantId,period, eventChannel);
+
+        bookingRepository.save(booking);
     }
 }
