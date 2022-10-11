@@ -1,6 +1,7 @@
 package com.bluesoft.rentalapplication.infrastructure.rest.api.booking;
 
 
+import com.bluesoft.rentalapplication.application.booking.BookingAccept;
 import com.bluesoft.rentalapplication.application.booking.BookingReject;
 import com.bluesoft.rentalapplication.application.commandregistry.CommandRegister;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +22,11 @@ public class BookingRestController {
     @PutMapping("/reject/{id}")
     public void reject(@PathVariable String id){
         commandRegister.register(new BookingReject(id));
+    }
+
+    @PutMapping("/accept/{id}")
+    public void accept(@PathVariable String id){
+        commandRegister.register(new BookingAccept(id));
     }
 
 }
