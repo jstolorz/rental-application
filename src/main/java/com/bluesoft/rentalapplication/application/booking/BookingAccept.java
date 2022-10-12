@@ -1,14 +1,14 @@
 package com.bluesoft.rentalapplication.application.booking;
 
 public class BookingAccept {
-    private String id;
+    private String getBookingId;
 
     public BookingAccept(final String id) {
 
-        this.id = id;
+        this.getBookingId = id;
     }
 
-    String getId() {
-        return id;
+    public String getGetBookingId() {
+        return getBookingId;
     }
 }
